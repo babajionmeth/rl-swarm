@@ -4,6 +4,10 @@ git clone https://github.com/babajionmeth/rl-swarm && cd rl-swarm && chmod +x ru
 ```
 # Download the dependencies 
 ```bash 
+sudo apt update
+sudo apt install -y build-essential python3-dev
+```
+```bash 
 curl -sSL https://raw.githubusercontent.com/zunxbt/installation/main/node.sh | bash
 ```
 ```bash
