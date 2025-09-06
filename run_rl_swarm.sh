@@ -267,8 +267,20 @@ echo -en $RESET_TEXT
 echo_green ">> Good luck in the swarm!"
 echo_blue ">> And remember to star the repo on GitHub! --> https://github.com/gensyn-ai/rl-swarm"
 
-python -m rgym_exp.runner.swarm_launcher \
-    --config-path "$ROOT/rgym_exp/config" \
-    --config-name "rg-swarm.yaml" 
+while true; do
 
-wait  # Keep script running until Ctrl+C
+    echo_green ">> Starting swarm trainer..."
+
+    sed -i.bak 's/^\([[:space:]]*\)yarn build/\1# yarn build/' "$ROOT/run_rl_swarm.sh"
+
+    if ! python -m rgym_exp.runner.swarm_launcher \
+        --config-path "$ROOT/rgym_exp/config" \
+        --config-name "rg-swarm.yaml"; then
+        echo_red ">> Swarm trainer exited with error. Restarting in 5 seconds... (Press Ctrl+C to stop)"
+    else
+        echo_green ">> Swarm trainer exited normally. Restarting in 5 seconds... (Press Ctrl+C to stop)"
+    fi
+
+   
+    sleep 5
+done
