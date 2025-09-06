@@ -1,3 +1,17 @@
+# steps for the setup
+```bash
+sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof nano unzip iproute2 build-essential gcc g++
+```
+# clone the repo
+```
+git clone https://github.com/gensyn-ai/rl-swarm.git && cd rl-swarm
+```
+# run the swarm
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+./run_rl_swarm.sh
+```
 # RL Swarm
 
 RL Swarm is a peer-to-peer system for reinforcement learning. It allows you to train models collaboratively with others in the swarm, leveraging their collective intelligence. It is open source and permissionless, meaning you can run it on a consumer laptop at home or on a powerful GPU in the cloud. You can also connect your model to the Gensyn Testnet to receive an on-chain identity that tracks your progress over time.
