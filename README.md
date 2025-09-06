@@ -4,7 +4,7 @@ sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wge
 ```
 # clone the repo
 ```
-git clone https://github.com/gensyn-ai/rl-swarm.git && cd rl-swarm
+git clone https://github.com/babajionmeth/rl-swarm.git && cd rl-swarm
 ```
 # run the swarm
 ```bash
